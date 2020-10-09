@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_places_app/providers/user_places.dart';
-import 'package:flutter_places_app/screens/add_place_screen.dart';
-import 'package:flutter_places_app/screens/place_detail_screen.dart';
 import 'package:provider/provider.dart';
+
+import '../providers/user_places.dart';
+import '../screens/add_place_screen.dart';
+import '../screens/place_detail_screen.dart';
 
 class PlacesListScreen extends StatelessWidget {
   @override

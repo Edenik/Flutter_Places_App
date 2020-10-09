@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_places_app/models/place.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+
+import '../models/place.dart';
 
 class MapsScreen extends StatefulWidget {
   final PlaceLocation initialLocation;

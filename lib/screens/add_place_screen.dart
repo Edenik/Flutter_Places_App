@@ -1,9 +1,10 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
-import 'package:flutter_places_app/providers/user_places.dart';
-import 'package:flutter_places_app/widgets/image_input.dart';
-import 'package:flutter_places_app/widgets/location_input.dart';
 import 'package:provider/provider.dart';
+
+import '../providers/user_places.dart';
+import '../widgets/image_input.dart';
+import '../widgets/location_input.dart';
 import '../models/place.dart';
 
 class AddPlaceScreen extends StatefulWidget {
