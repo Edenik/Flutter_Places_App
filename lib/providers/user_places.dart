@@ -1,8 +1,8 @@
 import 'dart:io';
-
 import 'package:flutter/foundation.dart';
+
 import '../models/place.dart';
-import 'package:flutter_places_app/helpers/db_helper.dart';
+import '../helpers/db_helper.dart';
 import '../helpers/location_helper.dart';
 
 class UserPlaces with ChangeNotifier {
@@ -10,6 +10,10 @@ class UserPlaces with ChangeNotifier {
 
   List<Place> get items {
     return [..._items];
+  }
+
+  Place findById(String id) {
+    return _items.firstWhere((place) => place.id == id);
   }
 
   Future<void> addPlace(

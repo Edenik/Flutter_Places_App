@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_places_app/providers/user_places.dart';
 import 'package:flutter_places_app/screens/add_place_screen.dart';
+import 'package:flutter_places_app/screens/place_detail_screen.dart';
 import 'package:provider/provider.dart';
 
 class PlacesListScreen extends StatelessWidget {
@@ -32,15 +33,19 @@ class PlacesListScreen extends StatelessWidget {
                     : ListView.builder(
                         itemCount: userPlaces.items.length,
                         itemBuilder: (ctx, i) => ListTile(
-                          leading: CircleAvatar(
-                            backgroundImage:
-                                FileImage(userPlaces.items[i].image),
+                          leading: Hero(
+                            tag: userPlaces.items[i].id,
+                            child: CircleAvatar(
+                              backgroundImage:
+                                  FileImage(userPlaces.items[i].image),
+                            ),
                           ),
                           title: Text(userPlaces.items[i].title),
-                          subtitle:
-                              Text('${userPlaces.items[i].location.address}'),
+                          subtitle: Text(userPlaces.items[i].location.address),
                           onTap: () {
-                            //go to detail page
+                            Navigator.of(context).pushNamed(
+                                PlaceDetailScreen.routeName,
+                                arguments: userPlaces.items[i].id);
                           },
                         ),
                       ),
